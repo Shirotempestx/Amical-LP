@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { CheckCircle, AlertCircle, ArrowRight, Shield, Star, Users, Phone, Mail, Globe, Cpu, Check, Layers, FileText } from 'lucide-react'
 
 const contactEmail = 'yahya0elkhazraoui@gmail.com'
@@ -15,9 +15,9 @@ const content = {
     },
     hero: {
       badge: 'Logiciel Immobilier & Construction',
-      title: 'Gérez vos chantiers et ventes en local.',
-      titleEmphasis: 'Gardez le contrôle.',
-      subtitle: 'MyAmical centralise la gestion des terrains, le suivi des travaux et les paiements des clients sur vos propres appareils sans dépendre du cloud.',
+      title: 'Gerez vos chantiers et ventes en local.',
+      titleEmphasis: 'Gardez le controle.',
+      subtitle: 'ImmoTrack ERP centralise la gestion des terrains, le suivi des travaux et les paiements des clients sur vos propres appareils sans dependre du cloud.',
       cta: 'Demander une démo gratuite',
       secondary: 'Voir le fonctionnement',
       statProjects: 'Projets Actifs',
@@ -34,7 +34,7 @@ const content = {
         'Retards de facturation et difficultés à suivre les paiements et relances clients.',
         'Documents clients (CIN, contrats) dispersés et difficiles d\'accès en déplacement.'
       ],
-      solutionTitle: 'La solution MyAmical',
+      solutionTitle: 'La solution ImmoTrack ERP',
       solutionDesc: 'Un système unique, rapide et fonctionnel hors-ligne qui rassemble tous vos besoins métiers.'
     },
     benefits: {
@@ -82,19 +82,19 @@ const content = {
       label: 'Preuve sociale',
       title: 'Déjà adopté par les leaders du secteur',
       sub: 'Découvrez comment nos partenaires transforment leur gestion quotidienne.',
-      testimonial: '« Grâce à MyAmical, nous suivons nos chantiers et nos encaissements en temps réel sans aucune perte d\'information. L\'installation locale nous garantit une sécurité maximale pour nos données clients. »',
-      author: 'Directeur Général',
-      company: 'Société Les Cinq Éléments',
+      testimonial: '« Grace a ImmoTrack ERP, nous suivons nos chantiers et nos encaissements en temps reel sans aucune perte d\'information. L\'installation locale nous garantit une securite maximale pour nos donnees clients. »',
+      author: 'Directeur General',
+      company: 'Societe Les Cinq Elements',
       stats: [
-        { value: '12+', label: 'Projets gérés' },
+        { value: '12+', label: 'Projets geres' },
         { value: '450+', label: 'Clients satisfaits' },
-        { value: '890+', label: 'Unités immobilières livrées' }
+        { value: '890+', label: 'Unites immobilieres livrees' }
       ]
     },
     forWhom: {
       label: 'Cible',
-      title: 'Une solution adaptée à votre profil',
-      sub: 'Que vous soyez promoteur ou constructeur, MyAmical répond à vos contraintes.',
+      title: 'Une solution adaptee a votre profil',
+      sub: 'Que vous soyez promoteur ou constructeur, ImmoTrack ERP repond a vos contraintes.',
       items: [
         {
           emoji: '🏢',
@@ -140,7 +140,7 @@ const content = {
       badge: 'Real Estate & Construction Software',
       title: 'Run your operations and sales locally.',
       titleEmphasis: 'Keep full control.',
-      subtitle: 'MyAmical centralizes property tracking, construction milestones, and client billing on your own devices without relying on the cloud.',
+      subtitle: 'ImmoTrack ERP centralizes property tracking, construction milestones, and client billing on your own devices without relying on the cloud.',
       cta: 'Request Free Demo',
       secondary: 'How it works',
       statProjects: 'Active Projects',
@@ -157,7 +157,7 @@ const content = {
         'Delayed billing and struggle to track customer payments and follow-ups.',
         'Client files (IDs, contracts) scattered across multiple places and inaccessible.'
       ],
-      solutionTitle: 'The MyAmical Solution',
+      solutionTitle: 'The ImmoTrack ERP Solution',
       solutionDesc: 'A single, high-performance, offline-ready software tailored to real estate promoters.'
     },
     benefits: {
@@ -205,7 +205,7 @@ const content = {
       label: 'Social Proof',
       title: 'Trusted by industry professionals',
       sub: 'See how our partners are transforming their daily operations.',
-      testimonial: '"Thanks to MyAmical, we track our construction sites and client collections in real time with zero data loss. The local server installation guarantees absolute security for our customer data."',
+      testimonial: '"Thanks to ImmoTrack ERP, we track our construction sites and client collections in real time with zero data loss. The local server installation guarantees absolute security for our customer data."',
       author: 'Managing Director',
       company: 'Société Les Cinq Éléments',
       stats: [
@@ -217,7 +217,7 @@ const content = {
     forWhom: {
       label: 'Target Audience',
       title: 'Tailored for your business model',
-      sub: 'Whether you are a developer or a builder, MyAmical fits your constraints.',
+      sub: 'Whether you are a developer or a builder, ImmoTrack ERP fits your constraints.',
       items: [
         {
           emoji: '🏢',
@@ -263,7 +263,7 @@ export default function Landing() {
   const t = content[lang]
 
   useEffect(() => {
-    document.title = lang === 'fr' ? 'MyAmical — Gestion Immobilière & Construction Locale' : 'MyAmical — Local Real Estate & Construction Management'
+    document.title = lang === 'fr' ? 'ImmoTrack ERP — Gestion Immobilière & Construction Locale' : 'ImmoTrack ERP — Local Real Estate & Construction Management'
   }, [lang])
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -274,7 +274,7 @@ export default function Landing() {
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     // Prepare mailto payload to guarantee it "works well" as requested
-    const subject = encodeURIComponent(`MyAmical Demo Request - ${formData.name}`)
+    const subject = encodeURIComponent(`ImmoTrack ERP Demo Request - ${formData.name}`)
     const body = encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nMessage: ${formData.message}`
     )
@@ -291,7 +291,7 @@ export default function Landing() {
         <div className="container navbar-inner">
           <a href="#" className="nav-brand">
             <div className="nav-brand-mark">MA</div>
-            <span>MyAmical</span>
+            <span>ImmoTrack ERP</span>
           </a>
           <nav className="nav-links">
             <a href="#features" className="nav-link">{t.nav.features}</a>
@@ -364,7 +364,7 @@ export default function Landing() {
                 <span className="hero-img-dot" style={{ background: '#ffbd2e' }}></span>
                 <span className="hero-img-dot" style={{ background: '#27c93f' }}></span>
               </div>
-              <img src="/hero-mockup.png" alt="MyAmical Dashboard Screenshot" />
+              <img src="/hero-mockup.png" alt="ImmoTrack ERP Dashboard Screenshot" />
             </div>
           </div>
         </div>
@@ -496,7 +496,7 @@ export default function Landing() {
           </div>
           <div className="proof-visual">
             <div className="proof-app-preview">
-              <img src="/hero-mockup.png" alt="MyAmical dashboard interface screenshot" />
+              <img src="/hero-mockup.png" alt="ImmoTrack ERP dashboard interface screenshot" />
             </div>
           </div>
         </div>
@@ -600,7 +600,7 @@ export default function Landing() {
             <div className="footer-brand">
               <div className="footer-brand-logo">
                 <div className="footer-brand-mark">MA</div>
-                <span>MyAmical</span>
+                <span>ImmoTrack ERP</span>
               </div>
               <p className="footer-desc">
                 {lang === 'fr' 
@@ -627,7 +627,7 @@ export default function Landing() {
             </div>
           </div>
           <div className="footer-bottom">
-            <div>© {new Date().getFullYear()} MyAmical. All rights reserved.</div>
+            <div>© {new Date().getFullYear()} ImmoTrack ERP. All rights reserved.</div>
             <div style={{ display: 'flex', gap: '16px' }}>
               <a href="#" className="footer-link">Privacy Policy</a>
               <a href="#" className="footer-link">Terms of Service</a>

@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
-import { CheckCircle2, ArrowRight, Mail, Phone } from 'lucide-react'
+import { CheckCircle2, ArrowRight, Mail } from 'lucide-react'
 
 const copy = {
   en: {
     nav: { features: 'Features', how: 'How it Works', pricing: 'Plans', contact: 'Contact' },
     hero: {
       title: 'Your real estate operations, fully under your control.',
-      subtitle: 'Install MyAmical on your devices. Manage units, clients, and finances with zero dependency.',
+      subtitle: 'Install ImmoTrack ERP on your devices. Manage units, clients, and finances with zero dependency.',
       cta: 'Request local setup',
       badge: 'Local-first SaaS'
     },
@@ -36,7 +36,7 @@ const copy = {
     },
     social: {
       title: 'Trusted by real estate teams',
-      stat: '50+ teams already running MyAmical locally',
+      stat: '50+ teams already running ImmoTrack ERP locally',
       testimonial: '"We moved from SaaS to local in 2 weeks. Offline mode alone saved us delays on every site."',
       author: '— Karim D., PMO, Casablanca'
     },
@@ -72,7 +72,7 @@ const copy = {
     nav: { features: 'Fonctionnalités', how: 'Processus', pricing: 'Tarifs', contact: 'Contact' },
     hero: {
       title: 'Vos opérations immobilières, sous votre contrôle total.',
-      subtitle: 'Installez MyAmical sur vos appareils. Gérez biens, clients et finances sans dépendre de personne.',
+      subtitle: 'Installez ImmoTrack ERP sur vos appareils. Gérez biens, clients et finances sans dépendre de personne.',
       cta: 'Demander installation locale',
       badge: 'SaaS local-first'
     },
@@ -102,7 +102,7 @@ const copy = {
     },
     social: {
       title: 'Approuvé par les équipes immobilières',
-      stat: '50+ équipes opèrent déjà MyAmical en local',
+      stat: '50+ équipes opèrent déjà ImmoTrack ERP en local',
       testimonial: '"Migration du SaaS au local en 2 semaines. Le mode offline nous fait gagner du temps sur chaque site."',
       author: '— Karim D., PMO, Casablanca'
     },
@@ -134,7 +134,7 @@ const copy = {
       contact: 'Contact'
     }
   }
-}
+} as const
 
 type Lang = keyof typeof copy
 
@@ -148,7 +148,7 @@ export default function LandingV2() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    const mailto = `mailto:yahya0elkhazraoui@gmail.com?subject=${encodeURIComponent('MyAmical Setup Request')}&body=${encodeURIComponent(
+    const mailto = `mailto:yahya0elkhazraoui@gmail.com?subject=${encodeURIComponent('ImmoTrack ERP Setup Request')}&body=${encodeURIComponent(
       `Name: ${formData.name}\nCompany: ${formData.company}\nEmail: ${formData.email}\nDevices: ${formData.devices}\nNotes: ${formData.notes}`
     )}`
     window.location.href = mailto
@@ -341,25 +341,27 @@ export default function LandingV2() {
           </div>
         </div>
       )}
-
-      {/* Footer */}
-      <footer className="lp2-footer">
-        <div className="lp2-container">
-          <div className="lp2-footer-section">
-            <h3>MyAmical</h3>
-            <p>{t.footer.tagline}</p>
-          </div>
-          <div className="lp2-footer-section">
-            <h3>{t.footer.contact}</h3>
-            <a href="mailto:yahya0elkhazraoui@gmail.com" className="lp2-footer-link">
-              <Mail size={18} /> yahya0elkhazraoui@gmail.com
-            </a>
-          </div>
-          <div className="lp2-footer-section">
-            <p>© 2026 MyAmical. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
+  )
+}
+
+// Custom CheckCircle2 to prevent compilation errors
+function CheckCircle2(props: any) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <circle cx="12" cy="12" r="10" />
+      <path d="m9 12 2 2 4-4" />
+    </svg>
   )
 }
