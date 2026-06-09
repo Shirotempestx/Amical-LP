@@ -290,7 +290,7 @@ export default function Landing() {
       <header className="navbar">
         <div className="container navbar-inner">
           <a href="#" className="nav-brand">
-            <div className="nav-brand-mark">MA</div>
+            <img src="/logo.png" alt="ImmoTrack ERP Logo" style={{ width: '32px', height: '32px', objectFit: 'contain', borderRadius: '6px' }} />
             <span>ImmoTrack ERP</span>
           </a>
           <nav className="nav-links">
@@ -599,7 +599,7 @@ export default function Landing() {
           <div className="footer-inner">
             <div className="footer-brand">
               <div className="footer-brand-logo">
-                <div className="footer-brand-mark">MA</div>
+                <img src="/logo.png" alt="ImmoTrack ERP Logo" style={{ width: '32px', height: '32px', objectFit: 'contain', borderRadius: '6px' }} />
                 <span>ImmoTrack ERP</span>
               </div>
               <p className="footer-desc">
